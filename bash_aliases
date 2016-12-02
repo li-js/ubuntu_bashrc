@@ -1,0 +1,9 @@
+alias ..='clear'
+alias h='head'
+alias t='tail'
+alias c='cat'
+alias nv='nvidia-smi'
+alias fp='readlink -f' # get full path
+alias cp='cp -v'
+alias mv='mv -v'
+alias rm='rm -v'
