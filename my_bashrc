@@ -1,38 +1,12 @@
-# some aliases
-# alias fsai1="sshfs jsli@ai1:/home/jsli/ /home/jianshu_li/ai1"
+# Set the screen title to working directory
+case $TERM in
+    screen*)
+        # This is the escape sequence ESC k ESC \
+        SCREENTITLE='\[\ek\w\e\\\]'
+        ;;
+    *)
+        SCREENTITLE=''
+        ;;
+esac
+PS1="${SCREENTITLE}${PS1}"
 
-# for CUDA
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:$LD_LIBRARY_PATH
-
-
-alias gotitan="ssh jianshu_li@titan.sutd.edu.sg"
-
-alias goai1="ssh jsli@ai1"
-alias sync_ai1_forjs="sshfs jsli@ai1:/home/skok/misc/forjs /home/jianshu_li/ai1/forjs"
-alias sync_ai1_CudaCourse="sshfs jsli@ai1:/home/skok/misc/ParCse/ /home/jianshu_li/ai1/Cuda_course"
-alias sync_ai1_test="sshfs jsli@ai1:/home/jsli/test /home/jianshu_li/ai1/test"
-alias sync_ai1_kaldi="sshfs jsli@ai1:/home/jsli/kaldi /home/jianshu_li/ai1/kaldi"
-alias sync_ai1_data="sshfs jsli@ai1:/media/drive4/randyho/data /home/jianshu_li/ai1/data"
-alias sync_ai1_spnlm2fst="sshfs jsli@ai1:/home/jsli/spnlm2fst /home/jianshu_li/ai1/spnlm2fst"
-alias sync_ai1_lmspn="sshfs jsli@ai1:/home/jsli/lmspn /home/jianshu_li/ai1/lmspn"
-alias sync_ai1_deepasr="sshfs jsli@ai1:/home/jsli/deepasr /home/jianshu_li/ai1/deepasr"
-
-
-
-alias goml1="ssh jsli@ml1"
-alias sync_ml1_kaldi="sshfs jsli@ml1:/home/jsli/kaldiPDNN/ /home/jianshu_li/ml1/kaldi"
-alias sync_ml1_experiments="sshfs jsli@ml1:/home/jsli/experiments /home/jianshu_li/ml1/experiments"
-alias sync_ml1_spnlm2fst="sshfs jsli@ml1:/home/jsli/spnlm2fst /home/jianshu_li/ml1/spnlm2fst"
-alias sync_ml1_amspn="sshfs jsli@ml1:/home/jsli/publications/amspn /home/jianshu_li/ml1/amspn"
-
-
-
-alias ..="clear"
-alias c="cat"
-alias gzc="gunzip -c"
-alias h="head"
-alias t="tail"
-
-
-export PYTHONPATH=$HOME/code/deepasr/deeplearn/python:$PYTHONPATH
