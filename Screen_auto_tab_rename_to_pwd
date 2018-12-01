@@ -1,0 +1,11 @@
+# Set the screen title to working directory
+case $TERM in
+    screen*)
+        # This is the escape sequence ESC k ESC \
+        SCREENTITLE='\[\ek\w\e\\\]'
+        ;;
+    *)
+        SCREENTITLE=''
+        ;;
+esac
+PS1="${SCREENTITLE}${PS1}"
